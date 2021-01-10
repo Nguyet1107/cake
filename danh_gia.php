@@ -108,7 +108,7 @@
                     <nav class="header__menu mobile-menu">
                         <ul>
                             <li><a href="./index.php">Home</a></li>
-                            <li class="active"><a href="./about.html">About</a></li>
+                            <li class="active"><a href="./about.php">About</a></li>
                             <li><a href="./shop.php">Shop</a></li>
                             <li><a href="#">Pages</a>
                                 <ul class="dropdown">
@@ -142,6 +142,10 @@
                      <tr>
                        <th >Họ tên</th>
                        <th><input type="text" name="txtHoTen" style="width: 150%"></th>
+                    </tr>
+                    <tr>
+                        <th>Ảnh</th>
+                        <th><input type="file" name="txtAnhMinhHoa" style="width: 100%"></th>
                     </tr>
                     <tr>
                         <th>Địa chỉ</th>

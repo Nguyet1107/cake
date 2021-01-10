@@ -238,118 +238,42 @@
             </div>
             <div class="row">
                 <div class="testimonial__slider owl-carousel">
-                    <div class="col-lg-6">
-                        <div class="testimonial__item">
-                            <div class="testimonial__author">
-                                <div class="testimonial__author__pic"> 
-                                    <img src="img/đánh giá/fb-1.jpg" alt="">
-                                </div>
-                                <div class="testimonial__author__text">
-                                    <h5>Lan Anh</h5>
-                                    <span>Thanh Hóa</span>
-                                </div>
-                            </div>
-                            <div class="rating">
-                                <span>4/5</span>
-                            </div>
-                            <p>Vị bánh đậm đà thơm lừng kết hợp với lớp phô mai mềm mịn rất ngon, bánh này có vị ngọt thanh nên không cảm thấy bị ngán khi ăn.</p>
-                            <p>Strawberry Crepe</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="testimonial__item">
-                            <div class="testimonial__author">
-                                <div class="testimonial__author__pic">
-                                    <img src="img/đánh giá/fb-3.jpg" alt="">
-                                </div>
-                                <div class="testimonial__author__text">
-                                    <h5>Tùng Bách</h5>
-                                    <span>Ninh Bình</span>
-                                </div>
-                            </div>
-                                <div class="rating">
-                                <span>5/5</span>
-                               </div>
-                        
-                            <p>Bánh có vị socola siêu đậm, ăn cảm nhận được vị thơm đắng nồng nàn của socola, lớp bánh cookie lạ miệng, hợp khẩu vị.</p>
-                            <p>Socola Cheese Cake</p>
+                    <?php
+                    $ket_noi= mysqli_connect("localhost","root","","cua_hang_banh");
 
-                    </div>
-                </div>
+                   $sql ="
+                   SELECT *
+                   FROM tbl_danh_gia order by id_danh_gia DESC
+                   ";
+                   //caau lenh lay ra du lieu mong muon
+                   $noi_dung = mysqli_query($ket_noi, $sql);
+                   //4.
+                   $i=2;
+                   while ($row= mysqli_fetch_array($noi_dung)) {
+                    $i++;
+                    ;?>
                     <div class="col-lg-6">
                         <div class="testimonial__item">
                             <div class="testimonial__author">
-                                <div class="testimonial__author__pic">
-                                    <img src="img/đánh giá/fb-4.jpg" alt="">
+                                
+                                <div class="testimonial__author__pic"> 
+                                    <img src="img/đánh giá/<?php echo $row["hinh_anh"];?>">
                                 </div>
                                 <div class="testimonial__author__text">
-                                    <h5>Thùy Linh</h5>
-                                    <span>Thái Nguyên</span>
+                                    <h5><?php echo $row["ho_ten"];?></h5>
+                                    <span><?php echo $row["dia_chi"];?></span>
                                 </div>
                             </div>
                             <div class="rating">
-                                <span>4/5</span>
+                                <span><?php echo $row["id_muc_do_hai_long"];?>/5</span>
                             </div>
-                            <p>Bánh mềm, ngon. Trang trí đẹp, bắt mắt. Cốt bánh mềm xốp và thơm. Lớp kem ngọt vừa đủ, không quá ngấy</p>
-                            <p>CupCake</p>
-                            
+                            <p><?php echo $row["noi_dung"];?></p>
+                            <p><?php echo $row["ten_san_pham"];?></p>
                         </div>
                     </div>
-                    <div class="col-lg-6">
-                        <div class="testimonial__item">
-                            <div class="testimonial__author">
-                                <div class="testimonial__author__pic">
-                                    <img src="img/đánh giá/fb-2.jpg" alt="">
-                                </div>
-                                <div class="testimonial__author__text">
-                                    <h5>Nguyệt</h5>
-                                    <span>Hưng Yên</span>
-                                </div>
-                            </div>
-                            <div class="rating">
-                                 <span>4/5</span>
-                            </div>
-                            <p>Cách trang trí hấp dẫn, bánh có vị sầu riêng nhưng không quá nồng kết hợp với lá dứa tạo nên hương vị hoàn hảo. Lớp bánh mềm, ngọt vừa phải.</p>
-                            <p>Crepe sầu riêng-lá dứa</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="testimonial__item">
-                            <div class="testimonial__author">
-                                <div class="testimonial__author__pic">
-                                    <img src="img/đánh giá/fb-5.jpg" alt="">
-                                </div>
-                                <div class="testimonial__author__text">
-                                    <h5>Vũ Huệ</h5>
-                                    <span>Nghệ An</span>
-                                </div>
-                            </div>
-                            <div class="rating">
-                                 <span>5/5</span>
-                            </div>
-                            <p>Vỏ bánh xốp, lớp bánh bên trong mềm, bánh có vị ngọt thanh kèm theo vị socola rất vừa miệng, trình bày đẹp.</p>
-                            <p>Socola donut</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="testimonial__item">
-                            <div class="testimonial__author">
-                                <div class="testimonial__author__pic">
-                                    <img src="img/đánh giá/fb-6.jpg" alt="">
-                                </div>
-                                <div class="testimonial__author__text">
-                                    <h5>Ngọc</h5>
-                                    <span>Bắc Ninh</span>
-                                </div>
-                            </div>
-                            <div class="rating">
-                                 <span>4/5</span>
-                            </div>
-                            <p>Nhìn món bánh có cách trình bày hấp dẫn, đẹp mắt, giá cả phải chăng, bên ngoài lớp bánh giòn, bên trong nhân mềm có vị chuối ngọt nhẹ.</p>
-                            <p>Crepe chuối</p>
-                        </div>
-                    </div>
-                </div>
+                     <?php
+                }
+                ;?>
             </div>
         </div>
     </section>
@@ -367,55 +291,35 @@
                 </div>
             </div>
             <div class="row">
+                <?php
+                    $ket_noi= mysqli_connect("localhost","root","","cua_hang_banh");
+
+                   $sql ="
+                   SELECT *
+                   FROM tbl_nhan_vien order by id_nhan_vien DESC
+                   ";
+                   //caau lenh lay ra du lieu mong muon
+                   $noi_dung = mysqli_query($ket_noi, $sql);
+                   //4.
+                   $i=0;
+                   while ($row= mysqli_fetch_array($noi_dung)) {
+                    $i++;
+                    ;?>
                 <div class="col-lg-3  col-md-6 col-sm-6">
-                    <div class="team__item set-bg" data-setbg="img/team/team-1.jpg">
+                    <div class="team__item set-bg" data-setbg="img/team/<?php echo $row["hinh_anh"];?>"">
                         <div class="team__item__text">
-                            <h6>Thanh Loan</h6>
-                            <span>Nhân viên bồi bàn</span>
+                            <h6><?php echo $row["ho_ten"];?></h6>
+                            <span><?php echo $row["cong_viec"];?></span>
                             <div class="team__item__social">
-                                <a href="https://www.facebook.com/thanh.loann.5"><i class="fa fa-facebook"></i></a>
-                                <a href="https://www.instagram.com/helloiamloan/"><i class="fa fa-instagram"></i></a>
+                                <a href="<?php echo $row["facebook"];?>""><i class="fa fa-facebook"></i></a>
+                                <a href="<?php echo $row["instagram"];?>""><i class="fa fa-instagram"></i></a>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3  col-md-6 col-sm-6">
-                    <div class="team__item set-bg" data-setbg="img/team/team-4.jpg">
-                        <div class="team__item__text">
-                            <h6>Doãn Thực</h6>
-                            <span>Nhân viên thu ngân</span>
-                            <div class="team__item__social">
-                                <a href="https://www.facebook.com/doanthuc12.03"><i class="fa fa-facebook"></i></a>
-                                <a href="https://www.instagram.com/imducanh_hy/"><i class="fa fa-instagram"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3  col-md-6 col-sm-6">
-                    <div class="team__item set-bg" data-setbg="img/team/team-3.jpg">
-                        <div class="team__item__text">
-                            <h6>Thùy Linh</h6>
-                            <span>Nhân viên thu ngân</span>
-                            <div class="team__item__social">
-                                <a href="https://www.facebook.com/tlinh.29"><i class="fa fa-facebook"></i></a>
-                                <a href="https://www.instagram.com/linh_linh2902/"><i class="fa fa-instagram"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3  col-md-6 col-sm-6">
-                    <div class="team__item set-bg" data-setbg="img/team/team-2.jpg">
-                        <div class="team__item__text">
-                            <h6>Diệu Linh</h6>
-                            <span>Nhân viên bồi bàn</span>
-                            <div class="team__item__social">
-                                <a href="https://www.facebook.com/eolynnn"><i class="fa fa-facebook"></i></a>
-                                <a href="https://www.instagram.com/_lynnn.xinh.gai/"><i class="fa fa-instagram"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                <?php
+                }
+                ;?>
         </div>
     </section>
     <!-- Team Section End -->
